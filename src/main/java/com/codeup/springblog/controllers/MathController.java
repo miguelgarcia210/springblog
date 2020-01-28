@@ -30,6 +30,10 @@ public class MathController {
     @GetMapping("/divide/{n1}/by/{n2}")
     @ResponseBody
     public String divideTwoNumbers(@PathVariable double n1, @PathVariable double n2) {
+        if (n2 == 0) {
+            return n1 + " divided by " + n2 + " is 0";
+        }
+        
         return n1 + " divided by " + n2 + " is " + (n1/n2);
     }
 }
