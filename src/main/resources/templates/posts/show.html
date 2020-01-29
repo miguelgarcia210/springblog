@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1 th:text="${post.getTitle()}"></h1>
+    <p th:text="${post.getDescription()}"></p>
+
+    <form action="/posts/edit" method="GET">
+        <input type="hidden" name="post_id" th:value="${post.getId()}">
+
+        <button type="submit" name="edit" value="true">Edit</button>
+        <button type="submit" name="delete" value="true">Delete</button>
+    </form>
+</div>
+</body>
+</html>
