@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<section style="display: flex; justify-content: center">
+    <form action="/posts/edit" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" th:if="${title != null}" th:value="${title}"><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" id="description" cols="30" rows="10" th:if="${description != null}" th:text="${description}"></textarea><br>
+
+        <input type="hidden" name="post_id" th:value="${post_id}">
+        <button type="submit" name="edit">Edit Post</button>
+    </form>
+</section>
+
+</body>
+</html>
