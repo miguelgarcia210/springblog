@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -10,9 +10,11 @@
 <section style="display: flex; justify-content: center">
     <form action="/posts/create" method="POST">
         <label for="title">Title:</label>
-        <input type="text" name="title" id="title"><br>
+        <input type="text" name="title" id="title" th:value="${title}"><br>
+
         <label for="description">Description:</label><br>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
+        <textarea name="description" id="description" cols="30" rows="10" th:text="${description}"></textarea><br>
+
         <button type="submit">Create Post</button>
     </form>
 </section>

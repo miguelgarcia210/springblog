@@ -5,8 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+<div>
+    <form action="/posts/create">
+        <button type="submit">Create A Post!</button>
+    </form>
+</div>
 <div th:each="post : ${posts}">
-    <h1 th:text="${post.getTitle()}"></h1>
+    <a href="" th:href="@{|/posts/${post.getId()}/|}">
+        <h1 th:text="${post.getTitle()}"></h1>
+    </a>
     <p th:text="${post.getDescription()}"></p>
 </div>
 </body>

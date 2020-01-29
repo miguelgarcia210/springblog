@@ -12,7 +12,7 @@
         <input type="text" name="title" id="title" th:if="${title != null}" th:value="${title}"><br>
 
         <label for="description">Description:</label><br>
-        <textarea name="description" id="description" cols="30" rows="10" th:if="${description != null}" th:value="${description}"></textarea><br>
+        <textarea name="description" id="description" cols="30" rows="10" th:if="${description != null}" th:text="${description}"></textarea><br>
 
         <input type="hidden" name="post_id" th:value="${post_id}">
         <button type="submit" name="edit">Edit Post</button>
